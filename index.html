@@ -1,0 +1,51 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DORCUS CLOCK</title>
+</head>
+<body>
+        <script>
+function updateClock() {
+    const now = new Date();
+    const hour = now.getHours() % 12;
+    const minute = now.getMinutes();
+    const second = now.getSeconds();
+
+    const hourAngle = (hour + minute / 60) * 30;
+    const minuteAngle = (minute + second / 60) * 6;
+    const secondAngle = second * 6;
+
+    document.getElementById('hourHand').setAttribute('transform', `rotate(${hourAngle}, 100, 100)`);
+    document.getElementById('minuteHand').setAttribute('transform', `rotate(${minuteAngle}, 100, 100)`);
+    document.getElementById('secondHand').setAttribute('transform', `rotate(${secondAngle}, 100, 100)`);
+}
+
+setInterval(updateClock, 1000);
+updateClock(); // Initial call to set clock hands correctly
+</script>
+    </script>
+    <body>
+        <svg id="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+            <!-- Clock face -->
+            <circle cx="100" cy="100" r="90" fill="white" stroke="black" stroke-width="2"/>
+            
+            <!-- Hour marks -->
+            <line x1="100" y1="20" x2="100" y2="30" stroke="black" stroke-width="2"/>
+            <line x1="180" y1="100" x2="170" y2="100" stroke="black" stroke-width="2"/>
+            <line x1="100" y1="180" x2="100" y2="170" stroke="black" stroke-width="2"/>
+            <line x1="20" y1="100" x2="30" y2="100" stroke="black" stroke-width="2"/>
+            
+            <!-- Clock hands -->
+            <line id="hourHand" x1="100" y1="100" x2="100" y2="50" stroke="black" stroke-width="2"/>
+            <line id="minuteHand" x1="100" y1="100" x2="100" y2="40" stroke="black" stroke-width="1.5"/>
+            <line id="secondHand" x1="100" y1="100" x2="100" y2="30" stroke="red" stroke-width="1"/>
+            
+            <!-- Center point -->
+            <circle cx="100" cy="100" r="3" fill="black"/>
+        </svg>
+    </body>
+</body>
+</html>
