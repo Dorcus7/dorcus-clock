@@ -1,6 +1,6 @@
-DORCUS CLOCK: Digital wall Clock Project
-Overview
- This is a customized clock using HTML, CSS,SVG,(Scalable Vector Graphics), JavaScript. 
+
+      Digital wall Clock Project
+ My customized clock using HTML, CSS,SVG,(Scalable Vector Graphics), JavaScript. 
 1. HTML Structure:
     * I created and named "index.html" that contains the basic HTML structure.
     * Decided to name it "DORCUS CLOCK".
